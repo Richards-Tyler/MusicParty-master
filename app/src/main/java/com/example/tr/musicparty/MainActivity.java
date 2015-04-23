@@ -107,7 +107,22 @@ public class MainActivity extends Activity implements MainMenu.OnFragmentInterac
         }
     };
 
+    listview.setOnItemClickListener(new OnItemClickListener(){
 
+
+        @Override
+        public void onItemClick(AdapterView<?>adapter,View v, int position){
+
+            ItemClicked item = adapter.getItem(position);
+
+            Intent intent = new Intent(Activity.this,destinationActivity.class);
+//based on item add info to intent
+            startActivity(intent);
+
+        }
+
+
+    });
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
